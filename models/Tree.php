@@ -81,4 +81,12 @@ class Tree extends ActiveRecord
      * @var bool attribute to cache the `active` state before a model update. Defaults to `true`.
      */
     public $activeOrig = true;
+
+    /**
+     * @inheritdoc
+     */
+    public static function tableName()
+    {
+        return 'tree';
+    }
 }
