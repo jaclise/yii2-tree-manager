@@ -6,7 +6,7 @@
  * @version   1.0.6
  */
 
-namespace kartik\tree;
+namespace jaclise\tree;
 
 use Yii;
 use yii\helpers\Url;

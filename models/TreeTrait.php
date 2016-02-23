@@ -6,13 +6,13 @@
  * @version   1.0.6
  */
 
-namespace kartik\tree\models;
+namespace jaclise\tree\models;
 
 use Yii;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\helpers\HtmlPurifier;
-use kartik\tree\TreeView;
+use jaclise\tree\TreeView;
 use creocoder\nestedsets\NestedSetsBehavior;
 
 /**

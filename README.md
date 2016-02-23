@@ -40,12 +40,12 @@ An enhanced tree management module from Krajee with tree node selection and mani
  
 The following important PHP classes are available with this module:
 
-1. **kartik\tree\Module:** _Module_, allows you to configure the module. You must setup a module named `treemanager`. Refer documentation for details. 
-2. **kartik\tree\TreeView:** _Widget_, allows you to manage the tree in admin mode or normal user mode with actions and toolbar to add, edit, reorder, or delete tree nodes.
-3. **kartik\tree\TreeViewInput:** _Widget_, allows you to use the treeview as a dropdown input either as a single select or multiple selection.
-4. **kartik\tree\models\Tree:** _Model_, the entire tree data structure that uses the Nested set behavior from [yii2-nested-sets](https://github.com/creocoder/yii2-nested-sets) to manage the tree nodes.
-5. **kartik\tree\models\TreeQuery:** _Query_, the query class as required for the Nested set model.
-6. **kartik\tree\controllers\NodeController:** _Controller_, the controller actions that manages the editing of each node for create, update, delete, or reorder (move).
+1. **jaclise\tree\Module:** _Module_, allows you to configure the module. You must setup a module named `treemanager`. Refer documentation for details. 
+2. **jaclise\tree\TreeView:** _Widget_, allows you to manage the tree in admin mode or normal user mode with actions and toolbar to add, edit, reorder, or delete tree nodes.
+3. **jaclise\tree\TreeViewInput:** _Widget_, allows you to use the treeview as a dropdown input either as a single select or multiple selection.
+4. **jaclise\tree\models\Tree:** _Model_, the entire tree data structure that uses the Nested set behavior from [yii2-nested-sets](https://github.com/creocoder/yii2-nested-sets) to manage the tree nodes.
+5. **jaclise\tree\models\TreeQuery:** _Query_, the query class as required for the Nested set model.
+6. **jaclise\tree\controllers\NodeController:** _Controller_, the controller actions that manages the editing of each node for create, update, delete, or reorder (move).
 
 ## Demo
 You can see detailed [documentation](http://demos.krajee.com/tree-manager) and [TreeView demonstration](http://demos.krajee.com/tree-manager-demo/treeview) or [TreeViewInput demonstration](http://demos.krajee.com/tree-manager-demo/treeview-input) on usage of the extension.
@@ -76,16 +76,16 @@ to the ```require``` section of your `composer.json` file.
 Create your database table to store the tree structure. Copy and modify the `schema/tree.sql` file (a MySQL example), to create the table `tbl_tree` (or for any table name you need). You can add columns you need to this table, but you cannot skip/drop any of the columns mentioned in the script. You can choose to rename the `id`, `root`, `lft`, `rgt`, `lvl`, `name`, `icon`, `icon_type` columns if you choose to - but these must be accordingly setup in the module.
 
 ### Step 2: Setup Model
-Create your model for storing the tree structure extending `kartik\tree\models\Tree` class. You can alternatively build your own model extending from `yii\db\ActiveRecord` but modify it to use the `kartik\tree\models\TreeTrait`. You must provide the table name in the model. Optionally you can add rules, or edit the various methods like `isVisible`, `isDisabled` etc. to identify allowed flags for nodes.
+Create your model for storing the tree structure extending `jaclise\tree\models\Tree` class. You can alternatively build your own model extending from `yii\db\ActiveRecord` but modify it to use the `jaclise\tree\models\TreeTrait`. You must provide the table name in the model. Optionally you can add rules, or edit the various methods like `isVisible`, `isDisabled` etc. to identify allowed flags for nodes.
 
-So when extending from the `\kartik\tree\models\Tree`, you can set it like below:
+So when extending from the `\jaclise\tree\models\Tree`, you can set it like below:
 
 ```php
 namespace frontend\models;
 
 use Yii;
 
-class Tree extends \kartik\tree\models\Tree
+class Tree extends \jaclise\tree\models\Tree
 {
     /**
      * @inheritdoc
@@ -97,7 +97,7 @@ class Tree extends \kartik\tree\models\Tree
 }
 ```
 
-Alternatively, you can configure your model to not extend from `kartik\tree\models\Tree` and instead implement and use the `kartik\tree\models\TreeTrait`:
+Alternatively, you can configure your model to not extend from `jaclise\tree\models\Tree` and instead implement and use the `jaclise\tree\models\TreeTrait`:
 
 ```php
 namespace frontend\models;
@@ -106,7 +106,7 @@ use Yii;
 
 class Tree extends \yii\db\ActiveRecord
 {
-    use kartik\tree\models\TreeTrait.
+    use jaclise\tree\models\TreeTrait.
 
     /**
      * @inheritdoc
@@ -124,7 +124,7 @@ Configure the module named `treemanager` in the modules section of your Yii conf
 ```php
 'modules' => [
    'treemanager' =>  [
-        'class' => '\kartik\tree\Module',
+        'class' => '\jaclise\tree\Module',
         // other module settings, refer detailed documentation
     ]
 ]
@@ -134,7 +134,7 @@ Configure the module named `treemanager` in the modules section of your Yii conf
 In your view files, you can now use the tree view directly to manage tree data as shown below:
 
 ```php
-use kartik\tree\TreeView;
+use jaclise\tree\TreeView;
 echo TreeView::widget([
     // single query fetch to render the tree
     'query'             => Tree::find()->addOrderBy('root, lft'), 
@@ -150,7 +150,7 @@ echo TreeView::widget([
 If you wish to use the tree input to select tree items, you can use the TreeViewInput widget as shown below. Normally you would use this as a dropdown with the `asDropdown` property set to `true`. If `asDropdown` is set to `false`, the treeview input widget will be rendered inline for selection.
 
 ```php
-use kartik\tree\TreeViewInput;
+use jaclise\tree\TreeViewInput;
 echo TreeViewInput::widget([
     // single query fetch to render the tree
     'query'             => Tree::find()->addOrderBy('root, lft'), 
