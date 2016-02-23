@@ -10,7 +10,7 @@
         "nested",
         "set",
         "nestedset",
-        "ajax",
+        "ajax", 
         "jquery"
     ],
     "homepage": "https://github.com/kartik-v/yii2-tree-manager",
