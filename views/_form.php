@@ -190,8 +190,11 @@ echo $renderContent(Module::VIEW_PART_1);
             <div class="col-sm-4">
                 <?= $keyField ?>
             </div>
-            <div class="col-sm-8">
+            <div class="col-sm-4">
                 <?= $form->field($node, $nameAttribute)->textInput($inputOpts) ?>
+            </div>
+            <div class="col-sm-4">
+                <?= $form->field($node, $codeAttribute)->textInput($inputOpts) ?>
             </div>
         </div>
     <?php else: ?>

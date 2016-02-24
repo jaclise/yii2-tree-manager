@@ -54,6 +54,7 @@ return [
     'Move Right' => '右移',
     'Move Up' => '上移',
     'Name' => '名称',
+    'Code' => '代码',
     'No valid tree nodes are available for display. Use toolbar buttons to add tree nodes.' => '没有有效的节点可以显示，请用工具条里按钮添加节点。',
     'Node # {id} - \'{name}\': {error}' => '节点 # {id} - \'{name}\': {error}',
     'Read Only' => '只读',

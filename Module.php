@@ -54,7 +54,7 @@ class Module extends \kartik\base\Module
      * @var array the default configuration settings for the tree view widget
      */
     public $treeViewSettings = [
-        'nodeView' => '@kvtree/views/_form',
+        'nodeView' => '@jaclise/views/_form',
         'nodeAddlViews' => [
             self::VIEW_PART_1 => '',
             self::VIEW_PART_2 => '',
@@ -91,6 +91,7 @@ class Module extends \kartik\base\Module
         $this->dataStructure += [
             'keyAttribute' => 'id',
             'nameAttribute' => 'name',
+            'codeAttribute' => 'code',
             'iconAttribute' => 'icon',
             'iconTypeAttribute' => 'icon_type'
         ];

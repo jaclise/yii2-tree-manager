@@ -402,6 +402,7 @@ trait TreeTrait
             'movable_l' => Yii::t('kvtree', 'Movable Left'),
             'movable_r' => Yii::t('kvtree', 'Movable Right'),
             'removable' => Yii::t('kvtree', 'Removable'),
+            'code'      => Yii::t('kvtree','Code'),
             'removable_all' => Yii::t('kvtree', 'Removable (with children)')
         ];
         if (!$treeAttribute) {
