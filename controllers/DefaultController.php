@@ -6,9 +6,32 @@ use jaclise\tree\models\Tree;
 use jaclise\tree\TreeView;
 use yii\web\Controller;
 use Yii;
+use yii\filters\VerbFilter;
+use yii\filters\AccessControl;
 
 class DefaultController extends Controller
 {
+  public function behaviors()
+  {
+      return [
+          'verbs' => [
+              'class' => VerbFilter::className(),
+              'actions' => [
+                  'delete' => ['post'],
+              ],
+          ],
+          'access' => [
+              'class' => AccessControl::className(),
+              'rules' => [
+                  [
+                      'allow' => true,
+                      'roles' => ['@']
+                  ]
+              ]
+          ],
+      ];
+  }
+
     public function actionIndex()
     {
         $htmlData=TreeView::widget([
