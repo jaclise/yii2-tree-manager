@@ -107,11 +107,11 @@ trait TreeTrait
          * @var Tree $this
          */
         $module = TreeView::module();
-        $nameAttribute = $iconAttribute = $iconTypeAttribute = null;
+        $nameAttribute =$codeAttribute= $iconAttribute = $iconTypeAttribute = null;
         extract($module->dataStructure);
         $attribs = array_merge([$nameAttribute, $iconAttribute, $iconTypeAttribute], static::$boolAttribs);
         $rules = [
-            [[$nameAttribute], 'required'],
+            [[$nameAttribute,$codeAttribute], 'required'],
             [$attribs, 'safe']
         ];
         if ($this->encodeNodeNames) {

@@ -57,6 +57,11 @@ $form = ActiveForm::begin([   // the active form instance
     'action' => $action,
     'options' => $formOptions
 ]);
+//default code
+if($node->isNewRecord){
+  $parentObj = $modelClass::findOne($parentKey);
+  $node->code=$parentObj->code;
+}
 // the primary key input field
 if ($showIDAttribute) {
     $options = ['readonly' => true];
