@@ -58,7 +58,7 @@ $form = ActiveForm::begin([   // the active form instance
     'options' => $formOptions
 ]);
 //default code
-if($node->isNewRecord){
+if($node->isNewRecord and $parentKey!='root'){
   $parentObj = $modelClass::findOne($parentKey);
   $node->code=$parentObj->code;
 }

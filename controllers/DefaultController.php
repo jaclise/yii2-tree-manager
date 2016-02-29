@@ -40,7 +40,7 @@ class DefaultController extends Controller
             'headingOptions'    => ['label' => '基础数据管理'],
             'isAdmin'           => true,                       // optional (toggle to enable admin mode)
             'displayValue'      => 1,                           // initial display value
-            //'softDelete'      => true,                        // normally not needed to change
+            'softDelete'      => false,                        // normally not needed to change
             //'cacheSettings'   => ['enableCache' => true]      // normally not needed to change
         ]);
         return $this->render('index', [
