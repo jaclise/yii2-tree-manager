@@ -1,6 +1,7 @@
 <?php
 
 use yii\db\Migration;
+use yii\db\Schema;
 
 class m160229_125352_create_tree_table extends Migration
 {
@@ -13,7 +14,7 @@ class m160229_125352_create_tree_table extends Migration
         $this->createTable(
             '{{%tree}}',
             [
-                'id' => Schema::TYPE_PK.'comment "Unique tree node identifier"',
+                'id' => Schema::TYPE_PK. ' comment "Unique tree node identifier"',
                 'root' => Schema::TYPE_INTEGER . '(11) comment "Tree root identifier"',
                 'lft' => Schema::TYPE_INTEGER . '(11) NOT NULL COMMENT "Nested set left property"',
                 'rgt' => Schema::TYPE_INTEGER . '(11) NOT NULL COMMENT "Nested set right property"',
@@ -39,11 +40,11 @@ class m160229_125352_create_tree_table extends Migration
         );
 
         //primary key
-        $this->addPrimaryKey('tbl_tree_NK1','{{%tree}}','root');
-        $this->addPrimaryKey('tbl_tree_NK2','{{%tree}}','lft');
-        $this->addPrimaryKey('tbl_tree_NK3','{{%tree}}','rgt');
-        $this->addPrimaryKey('tbl_tree_NK4','{{%tree}}','lvl');
-        $this->addPrimaryKey('tbl_tree_NK5','{{%tree}}','active');
+        $this->createIndex('tbl_tree_NK1','{{%tree}}','root');
+        $this->createIndex('tbl_tree_NK2','{{%tree}}','lft');
+        $this->createIndex('tbl_tree_NK3','{{%tree}}','rgt');
+        $this->createIndex('tbl_tree_NK4','{{%tree}}','lvl');
+        $this->createIndex('tbl_tree_NK5','{{%tree}}','active');
 
         $this->execute("INSERT INTO {{%tree}} (id, root, lft, rgt, lvl, name, icon, icon_type, active, selected, disabled, readonly, visible, collapsed, movable_u, movable_d, movable_l, movable_r, removable, removable_all, code) values
 
@@ -52,19 +53,19 @@ class m160229_125352_create_tree_table extends Migration
                         (3, 3, 1, 2, 0, '应聘行业;', '', true, true, false, false, false, true, false, false, false, false, false, false, false, 'C_'),
                         (4, 4, 1, 2, 0, '教育程度', '', true, true, false, false, false, true, false, false, false, false, false, false, false, 'D_'),
                         (5, 5, 1, 2, 0, '所在部门', '', true, true, false, false, false, true, false, false, false, false, false, false, false, 'E_'),
-                        (6, 6, 1, 2, 0, '语言', '', true, true, false, false, false, true, false, false, false, false, false, false, false, 'E_')，
-                        (7, 7, 1, 2, 0, '经营模式', '', true, true, false, false, false, true, false, false, false, false, false, false, false, 'E_')
-                        (8, 8, 1, 2, 0, '公司规模', '', true, true, false, false, false, true, false, false, false, false, false, false, false, 'E_')
-                        (9, 9, 1, 2, 0, '公司性质', '', true, true, false, false, false, true, false, false, false, false, false, false, false, 'E_')
-                        (10, 10, 1, 2, 0, '熟练程度', '', true, true, false, false, false, true, false, false, false, false, false, false, false, 'E_')
-                        (11, 11, 1, 2, 0, '工作性质', '', true, true, false, false, false, true, false, false, false, false, false, false, false, 'E_')
-                        (6, 6, 1, 2, 0, '语言', '', true, true, false, false, false, true, false, false, false, false, false, false, false, 'E_')
+                        (6, 6, 1, 2, 0, '语言', '', true, true, false, false, false, true, false, false, false, false, false, false, false, 'F_'),
+                        (7, 7, 1, 2, 0, '经营模式', '', true, true, false, false, false, true, false, false, false, false, false, false, false, 'G_'),
+                        (8, 8, 1, 2, 0, '公司规模', '', true, true, false, false, false, true, false, false, false, false, false, false, false, 'H_'),
+                        (9, 9, 1, 2, 0, '公司性质', '', true, true, false, false, false, true, false, false, false, false, false, false, false, 'I_'),
+                        (10, 10, 1, 2, 0, '熟练程度', '', true, true, false, false, false, true, false, false, false, false, false, false, false, 'J_'),
+                        (11, 11, 1, 2, 0, '工作性质', '', true, true, false, false, false, true, false, false, false, false, false, false, false, 'K_'),
+                        (12, 12, 1, 2, 0, '语言', '', true, true, false, false, false, true, false, false, false, false, false, false, false, 'L_')
                         ");
     }
 
     public function down()
     {
-        $this->dropTable('{{%tree}}')
+        $this->dropTable('{{%tree}}');
         return true;
     }
 
