@@ -250,7 +250,7 @@ class TreeView extends Widget
     public $showTooltips = true;
 
     /**
-     * @var bool whether to auto load the bootstrap plugin assets if `showTooltips` is `true` OR if 
+     * @var bool whether to auto load the bootstrap plugin assets if `showTooltips` is `true` OR if
      * `TreeViewInput::asDropdown` is true. Defaults to `true`.
      */
     public $autoLoadBsPlugin = true;
@@ -393,7 +393,7 @@ class TreeView extends Widget
     /**
      * @var array the HTML attributes for the tree selector container
      */
-    public $treeOptions = ['style' => 'height:410px'];
+    public $treeOptions = [];
 
     /**
      * @var array the HTML attributes for the detail form container which will display the details of the selected node
@@ -1167,7 +1167,7 @@ HTML;
         return $var ? 1 : 0;
     }
 
-    
+
     /**
      * Renders the markup for the detail form to edit/view the selected tree node
      *
