@@ -89,7 +89,7 @@ class Module extends \kartik\base\Module
             'depthAttribute' => 'lvl',
         ];
         $this->dataStructure += [
-            'keyAttribute' => 'id',
+            'keyAttribute' => 'code',
             'nameAttribute' => 'name',
             'codeAttribute' => 'code',
             'iconAttribute' => 'icon',
