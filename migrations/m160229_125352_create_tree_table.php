@@ -58,10 +58,7 @@ class m160229_125352_create_tree_table extends Migration
                         (8, 8, 1, 2, 0, '公司规模', '', true, true, false, false, false, true, false, false, false, false, false, false, false, 'H_'),
                         (9, 9, 1, 2, 0, '公司性质', '', true, true, false, false, false, true, false, false, false, false, false, false, false, 'I_'),
                         (10, 10, 1, 2, 0, '熟练程度', '', true, true, false, false, false, true, false, false, false, false, false, false, false, 'J_'),
-                        (11, 11, 1, 8, 0, '工作性质', '', true, true, false, false, false, true, false, false, false, false, false, false, false, 'K_'),
-                        (12, 11, 2, 3, 1, '全职', '', true, true, false, false, false, true, false, false, false, false, false, false, false, 'K_01'),
-                        (13, 11, 4, 5, 1, '兼职', '', true, true, false, false, false, true, false, false, false, false, false, false, false, 'K_02'),
-                        (14, 11, 6, 7, 1, '实习', '', true, true, false, false, false, true, false, false, false, false, false, false, false, 'K_03')
+                        (100, 11, 1, 8, 0, '工作性质', '', true, true, false, false, false, true, false, false, false, false, false, false, false, 'K_')
                         ");
     }
 
